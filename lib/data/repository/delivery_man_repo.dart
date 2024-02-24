@@ -19,6 +19,7 @@ class DeliveryManRepo {
   Future<Response> addDeliveryMan(DeliveryManModel deliveryMan, String pass, XFile? image, List<XFile> identities, String token, bool isAdd) async
   {
     http.MultipartRequest request = http.MultipartRequest(
+
         'POST', Uri.parse('${AppConstants.baseUrl}${isAdd ? AppConstants.addDmUri : '${AppConstants.updateDmUri}${deliveryMan.id}'}',
     ));
 
